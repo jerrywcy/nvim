@@ -1,6 +1,7 @@
 local plugins = {
 
-    ["wbthomason/packer.nvim"] = {
+    {
+        "wbthomason/packer.nvim",
         cmd = {
             "PackerSnapshot",
             "PackerSnapshotRollback",
@@ -19,7 +20,8 @@ local plugins = {
         end,
     },
     
-    ["nvim-treesitter/nvim-treesitter"] = {
+    {
+        "nvim-treesitter/nvim-treesitter",
         module = "nvim-treesitter",
         setup = function()
             require("core.utils").on_file_open("nvim-treesitter")
@@ -31,18 +33,37 @@ local plugins = {
         end,
     },
 
-    ["williamboman/mason.nvim"] = {
+    {
+        "williamboman/mason.nvim",
         cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
         config = function()
             require "plugins.configs.mason"
         end,
     },
 
+    {
+        "neovim/nvim-lspconfig",
+    },
+
+    {
+        "williamboman/mason-lspconfig.nvim",
+    },
+
+    {
+        "mfussenegger/nvim-lint",
+    },
+
+    {
+        "mhartington/formatter.nvim",
+    },
+
+    {
+        "mfussenegger/nvim-dap",
+    },
+
 }
 
 local present, packer = pcall(require,"packer")
-
-print(present)
 
 if present then
     vim.cmd("packadd packer.nvim")
@@ -51,5 +72,4 @@ if present then
     
     packer.init(init_options)
     packer.startup { plugins }
-    -- print(vim.inspect(res))
 end

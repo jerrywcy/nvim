@@ -1,5 +1,5 @@
 local fn = vim.fn
-local packer_path=fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local packer_path=fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 
 local is_first_time_use = function() 
 	return fn.empty(fn.glob(packer_path)) > 0
@@ -32,8 +32,6 @@ local initialize = function()
 	install_and_config_plugins()
 	-- packer_complete()
 end
-
-print(is_first_time_use())
 
 if is_first_time_use() == true then
 	initialize()
