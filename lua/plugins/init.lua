@@ -55,10 +55,19 @@ local plugins = {
 
     {
         "mhartington/formatter.nvim",
+        cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
+        config = function()
+            require "plugins.configs.formatter"
+        end,
     },
 
     {
         "mfussenegger/nvim-dap",
+    },
+
+    {
+        "luisiacc/gruvbox-baby",
+        branch = "main",
     },
 
 }
