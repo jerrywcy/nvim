@@ -19,7 +19,7 @@ local plugins = {
             require "plugins"
         end,
     },
-    
+
     {
         "nvim-treesitter/nvim-treesitter",
         module = "nvim-treesitter",
@@ -72,7 +72,15 @@ local plugins = {
 
     {
         "folke/tokyonight.nvim",
-    }
+    },
+
+    {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            require("plugins.configs.lualine")
+        end
+    },
 }
 local present, packer = pcall(require,"packer")
 
