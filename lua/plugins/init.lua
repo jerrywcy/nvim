@@ -78,9 +78,18 @@ local plugins = {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
-            require("plugins.configs.lualine")
+            require "plugins.configs.lualine"
         end
     },
+
+    {
+        "noib3/nvim-cokeline",
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = function()
+            require "plugins.configs.cokeline"
+        end
+    },
+
 }
 local present, packer = pcall(require,"packer")
 
@@ -88,7 +97,7 @@ if present then
     vim.cmd("packadd packer.nvim")
 
     local init_options = require "plugins.configs.packer_init"
-    
+
     packer.init(init_options)
     packer.startup { plugins }
 end

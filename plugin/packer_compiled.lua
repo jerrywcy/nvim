@@ -108,6 +108,12 @@ _G.packer_plugins = {
     path = "/home/jerrywcy/.local/share/nvim/site/pack/packer/opt/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["nvim-cokeline"] = {
+    config = { "\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.configs.cokeline\frequire\0" },
+    loaded = true,
+    path = "/home/jerrywcy/.local/share/nvim/site/pack/packer/start/nvim-cokeline",
+    url = "https://github.com/noib3/nvim-cokeline"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/jerrywcy/.local/share/nvim/site/pack/packer/start/nvim-dap",
@@ -191,6 +197,10 @@ time([[Setup for nvim-treesitter]], false)
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\0027\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\28plugins.configs.lualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
+-- Config for: nvim-cokeline
+time([[Config for nvim-cokeline]], true)
+try_loadstring("\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.configs.cokeline\frequire\0", "config", "nvim-cokeline")
+time([[Config for nvim-cokeline]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
