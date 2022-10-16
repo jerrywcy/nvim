@@ -30,7 +30,7 @@ end
 local initialize = function()
 	clone_packer()
 	install_and_config_plugins()
-	-- packer_complete()
+	packer_complete()
 end
 
 if is_first_time_use() == true then

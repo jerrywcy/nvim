@@ -66,12 +66,14 @@ local plugins = {
     },
 
     {
-        "luisiacc/gruvbox-baby",
-        branch = "main",
+        "neoclide/coc.nvim",
+        branch = "release",
     },
 
+    {
+        "folke/tokyonight.nvim",
+    }
 }
-
 local present, packer = pcall(require,"packer")
 
 if present then

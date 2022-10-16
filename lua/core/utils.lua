@@ -1,5 +1,6 @@
 local M = {}
 local autocmd = vim.api.nvim_create_autocmd
+local merge_tb = vim.tbl_deep_extend
 
 -- require("packer").loader(tb.plugins)
 -- This must be used for plugins that need to be loaded just after a file
@@ -42,6 +43,23 @@ M.on_file_open = function(plugin_name)
       return file ~= "NvimTree_1" and file ~= "[packer]" and file ~= ""
     end,
   }
+end
+
+M.load_mappings = function(mappings, mapping_opt)
+    local set = vim.keymap.set
+    for section, section_values in pairs(mappings) do
+        for mode, mode_values in pairs(section_values) do
+            local default_opts = merge_tb("force", { mode = mode }, mapping_opt or {})
+            for keybind, mapping_info in pairs(mode_values) do
+                local opts = merge_tb("force", default_opts, mapping_info.opts or {})
+
+                mapping_info.opts , opts.mode = nil, nil
+                opts.desc = mapping_info[2]
+
+                set(mode,keybind,mapping_info[1],opts)
+            end
+        end
+    end
 end
 
 return M
