@@ -1,6 +1,4 @@
-local mappings = {}
-
-mappings.general = {
+local mappings = {
     n = {
         ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
 

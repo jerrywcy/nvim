@@ -136,6 +136,18 @@ require('cokeline').setup({
     bg = get_hex('ColorColumn', 'bg'),
   },
 
+    sidebar = {
+        filetype = 'NvimTree',
+        components = {
+            {
+                text = '  NvimTree',
+                fg = yellow,
+                bg = get_hex('NvimTreeNormal', 'bg'),
+                style = 'bold',
+            },
+        }
+    },
+
   components = {
     components.space,
     components.separator,
@@ -151,3 +163,63 @@ require('cokeline').setup({
     components.space,
   },
 })
+
+local mappings = {
+    n = {
+        ["<S-Tab>"] = {
+            "<Plug>(cokeline-focus-prev)",
+            "Focus previous buffer",
+        },
+
+        ["<Tab>"] = {
+            "<Plug>(cokeline-focus-next)",
+            "Focus next buffer",
+        },
+
+        ["<leader>p"] = {
+            "<Plug>(cokeline-switch-prev)",
+            "Switch the position of the current buffer with the previous buffer",
+        },
+
+        ["<leader>n"] = {
+            "<Plug>(cokeline-switch-next)",
+            "Switch the position of the current buffer with the next buffer",
+        },
+
+        ["<leader>b"] = {
+            "<Plug>(cokeline-pick-focus)",
+            "Focus a buffer by its pick letter",
+        },
+
+        ["<leader>cb"] = {
+            "<Plug>(cokeline-pick-close)",
+            "Close a buffer by its pick letter",
+        },
+    },
+}
+
+require("core.utils").load_mappings(mappings, { silent = true })
+
+local set = vim.keymap.set
+
+for i = 1,9 do
+    set(
+        "n",
+        ("<F%s>"):format(i),
+        ("<Plug>(cokeline-focus-%s)"):format(i),
+        {
+            desc = ("Focus buffer %s"):format(i),
+            silent = true,
+        }
+    )
+
+    set(
+        "n",
+        ("<leader>%s"):format(i),
+        ("<Plug>(cokeline-focus-%s)"):format(i),
+        {
+            desc = ("Switch to buffer %s"):format(i),
+            silent = true,
+        }
+    )
+end
