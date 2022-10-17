@@ -45,4 +45,5 @@ opt.whichwrap:append "<>[]hl"
 
 g.mapleader = " "
 
+-- theme
 vim.cmd [[colorscheme tokyonight]]

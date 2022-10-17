@@ -68,6 +68,9 @@ local plugins = {
     {
         "neoclide/coc.nvim",
         branch = "release",
+        config = function()
+            require "plugins.configs.coc"
+        end,
     },
 
     {
