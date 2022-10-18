@@ -1,4 +1,13 @@
 {
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "html",
+        "lua",
+        "javascript",
+        "shell",
+        "typescript"
+    ],
     "prettier.tabWidth" : 4,
     "prettier.insertPragma" : true
 }
