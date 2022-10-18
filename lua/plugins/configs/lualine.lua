@@ -1,3 +1,7 @@
+if not require("core.utils").plugin_loaded("lualine") then
+    return
+end
+
 require('lualine').setup {
     options = {
         icons_enabled = true,

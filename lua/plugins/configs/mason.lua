@@ -1,7 +1,5 @@
-local present, mason = pcall(require, "mason")
-
-if not present then
-  return
+if not require("core.utils").plugin_loaded("cokeline") then
+    return
 end
 
 vim.api.nvim_create_augroup("_mason", { clear = true })

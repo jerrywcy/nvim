@@ -1,3 +1,7 @@
+if not require("core.utils").plugin_loaded("cokeline") then
+    return
+end
+
 local get_hex = require('cokeline/utils').get_hex
 local mappings = require('cokeline/mappings')
 

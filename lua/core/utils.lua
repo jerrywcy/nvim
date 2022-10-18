@@ -60,4 +60,8 @@ M.load_mappings = function(mappings, mapping_opt)
     end
 end
 
+M.plugin_loaded = function(plugin_name)
+    local loaded, plugin = pcall(require,plugin_name)
+    return loaded
+end
 return M

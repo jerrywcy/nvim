@@ -1,3 +1,7 @@
+if not require("core.utils").plugin_loaded("lspconfig") then
+    return
+end
+
 local g = vim.g
 
 -- disable netrw at the very start of your init.lua (strongly advised)

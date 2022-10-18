@@ -1,3 +1,7 @@
+if not require("core.utils").plugin_loaded("tokyonight") then
+    return
+end
+
 vim.cmd "colorscheme tokyonight"
 
 require("tokyonight").setup({

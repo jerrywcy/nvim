@@ -1,6 +1,4 @@
-local present, treesitter = pcall(require, "nvim-treesitter.configs")
-
-if not present then
+if not require("core.utils").plugin_loaded("nvim-treesitter") then
     return
 end
 
