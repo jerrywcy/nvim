@@ -23,7 +23,7 @@ vim.g.coc_global_extensions = {
     "coc-stylelint",
     "coc-stylelintplus",
     "coc-snippets",
-    "coc-stylua",
+--    "coc-stylua",
     "coc-sumneko-lua",
     "coc-svelte",
     "coc-translator",

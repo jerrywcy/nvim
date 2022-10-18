@@ -1,4 +1,5 @@
-if not require("core.utils").plugin_loaded("nvim-treesitter") then
+local loaded, treesitter = pcall(require,"nvim-treesitter")
+if not loaded then
     return
 end
 

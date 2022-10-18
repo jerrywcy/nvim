@@ -1,4 +1,4 @@
-if not require("core.utils").plugin_loaded("cokeline") then
+if not require("core.utils").plugin_loaded("mason") then
     return
 end
 
@@ -42,5 +42,5 @@ vim.api.nvim_create_user_command("MasonInstallAll", function()
   vim.cmd("MasonInstall " .. table.concat(options.ensure_installed, " "))
 end, {})
 
-mason.setup(options)
+require("mason").setup(options)
 
