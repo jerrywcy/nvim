@@ -110,7 +110,10 @@ local plugins = {
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require "plugins.configs.telescope"
+        end,
     },
 }
 local present, packer = pcall(require, "packer")
