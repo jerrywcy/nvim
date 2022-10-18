@@ -75,6 +75,9 @@ local plugins = {
 
     {
         "folke/tokyonight.nvim",
+        config = function()
+            require "plugins.configs.tokyonight"
+        end,
     },
 
     {
