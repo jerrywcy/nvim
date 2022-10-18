@@ -33,37 +33,37 @@ local plugins = {
         end,
     },
 
-    {
-        "williamboman/mason.nvim",
-        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
-        config = function()
-            require "plugins.configs.mason"
-        end,
-    },
+    -- {
+    -- "williamboman/mason.nvim",
+    -- cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+    -- config = function()
+    -- require "plugins.configs.mason"
+    -- end,
+    -- },
+    --
+    -- {
+    -- "neovim/nvim-lspconfig",
+    -- },
+    --
+    -- {
+    -- "williamboman/mason-lspconfig.nvim",
+    -- },
+    --
+    -- {
+    -- "mfussenegger/nvim-lint",
+    -- },
 
-    {
-        "neovim/nvim-lspconfig",
-    },
+    -- {
+    -- "mhartington/formatter.nvim",
+    -- cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
+    -- config = function()
+    -- require "plugins.configs.formatter"
+    -- end,
+    -- },
 
-    {
-        "williamboman/mason-lspconfig.nvim",
-    },
-
-    {
-        "mfussenegger/nvim-lint",
-    },
-
-    {
-        "mhartington/formatter.nvim",
-        cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
-        config = function()
-            require "plugins.configs.formatter"
-        end,
-    },
-
-    {
-        "mfussenegger/nvim-dap",
-    },
+    -- {
+    -- "mfussenegger/nvim-dap",
+    -- },
 
     {
         "neoclide/coc.nvim",
@@ -90,7 +90,7 @@ local plugins = {
 
     {
         "noib3/nvim-cokeline",
-        requires = {'kyazdani42/nvim-web-devicons'},
+        requires = { 'kyazdani42/nvim-web-devicons' },
         config = function()
             require "plugins.configs.cokeline"
         end
@@ -101,13 +101,19 @@ local plugins = {
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
-        tag = 'nightly',-- optional, updated every week. (see issue #1193)
+        tag = 'nightly', -- optional, updated every week. (see issue #1193)
         config = function()
             require "plugins.configs.nvim-tree"
         end,
-    }
+    },
+
+    {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    },
 }
-local present, packer = pcall(require,"packer")
+local present, packer = pcall(require, "packer")
 
 if present then
     vim.cmd("packadd packer.nvim")
