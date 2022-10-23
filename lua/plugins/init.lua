@@ -33,37 +33,37 @@ local plugins = {
         end,
     },
 
-    -- {
-    -- "williamboman/mason.nvim",
-    -- cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
-    -- config = function()
-    -- require "plugins.configs.mason"
-    -- end,
-    -- },
-    --
-    -- {
-    -- "neovim/nvim-lspconfig",
-    -- },
-    --
-    -- {
-    -- "williamboman/mason-lspconfig.nvim",
-    -- },
-    --
-    -- {
-    -- "mfussenegger/nvim-lint",
-    -- },
+    {
+        "williamboman/mason.nvim",
+        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+        config = function()
+            require "plugins.configs.mason"
+        end,
+    },
+    
+    {
+        "neovim/nvim-lspconfig",
+    },
+    
+    {
+        "williamboman/mason-lspconfig.nvim",
+    },
+    
+    {
+        "mfussenegger/nvim-lint",
+    },
 
-    -- {
-    -- "mhartington/formatter.nvim",
-    -- cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
-    -- config = function()
-    -- require "plugins.configs.formatter"
-    -- end,
-    -- },
+    {
+        "mhartington/formatter.nvim",
+        cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
+        config = function()
+            require "plugins.configs.formatter"
+        end,
+    },
 
-    -- {
-    -- "mfussenegger/nvim-dap",
-    -- },
+    {
+        "mfussenegger/nvim-dap",
+    },
 
     {
         "neoclide/coc.nvim",
@@ -115,6 +115,14 @@ local plugins = {
             require "plugins.configs.telescope"
         end,
     },
+
+    {
+        "mbbill/undotree",
+        config = function()
+            require "plugins.configs.undotree"
+        end,
+    },
+
 }
 local present, packer = pcall(require, "packer")
 
