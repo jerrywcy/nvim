@@ -60,9 +60,9 @@ g.undotree_ShortIndicators = 0
 
 -- undotree window width
 if g.undotree_ShortIndicators == 1 then
-    g.undotree_SplitWidth = 24
-else 
-    g.undotree_SplitWidth = 30
+	g.undotree_SplitWidth = 24
+else
+	g.undotree_SplitWidth = 30
 end
 
 -- diff window height
@@ -112,39 +112,31 @@ g.undotree_CursorLine = 1
 
 -- User commands
 local usrcommand = vim.api.nvim_create_user_command
-usrcommand(
-    "UndotreeToggle",
-    ":call undotree#UndotreeToggle()",
-    {
-        bar = true,
-        nargs = 0,
-        desc = "Toggle Undo Tree",
-    }
-)
-usrcommand(
-    "UndotreeHide",
-    ":call undotree#UndotreeHide()",
-    {
-        bar = true,
-        nargs = 0,
-        desc = "Hide Undo Tree",
-    }
-)
-usrcommand(
-    "UndotreeShow",
-    ":call undotree#UndotreeShow()",
-    {
-        bar = true,
-        nargs = 0,
-        desc = "Show Undo Tree",
-    }
-)
-usrcommand(
-    "UndotreeFocus",
-    ":call undotree#UndotreeFocus()",
-    {
-        bar = true,
-        nargs = 0,
-        desc = "Focus Undo Tree",
-    }
-)
+usrcommand("UndotreeToggle", ":call undotree#UndotreeToggle()", {
+	bar = true,
+	nargs = 0,
+	desc = "Toggle Undo Tree",
+})
+usrcommand("UndotreeHide", ":call undotree#UndotreeHide()", {
+	bar = true,
+	nargs = 0,
+	desc = "Hide Undo Tree",
+})
+usrcommand("UndotreeShow", ":call undotree#UndotreeShow()", {
+	bar = true,
+	nargs = 0,
+	desc = "Show Undo Tree",
+})
+usrcommand("UndotreeFocus", ":call undotree#UndotreeFocus()", {
+	bar = true,
+	nargs = 0,
+	desc = "Focus Undo Tree",
+})
+
+local mappings = {
+	n = {
+		["<leader>u"] = { "<cmd> UndotreeToggle <CR>", "Toggle Undo Tree" },
+	},
+}
+
+require("core.utils").load_mappings(mappings)
