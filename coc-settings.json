@@ -6,7 +6,8 @@
         "lua",
         "javascript",
         "shell",
-        "typescript"
+        "typescript",
+        "rust"
     ],
 
     "prettier.tabWidth" : 4,
