@@ -1,136 +1,143 @@
 local plugins = {
 
-    {
-        "wbthomason/packer.nvim",
-        cmd = {
-            "PackerSnapshot",
-            "PackerSnapshotRollback",
-            "PackerSnapshotDelete",
-            "PackerInstall",
-            "PackerUpdate",
-            "PackerSync",
-            "PackerClean",
-            "PackerCompile",
-            "PackerStatus",
-            "PackerProfile",
-            "PackerLoad",
-        },
-        config = function()
-            require "plugins"
-        end,
-    },
+	{
+		"wbthomason/packer.nvim",
+		cmd = {
+			"PackerSnapshot",
+			"PackerSnapshotRollback",
+			"PackerSnapshotDelete",
+			"PackerInstall",
+			"PackerUpdate",
+			"PackerSync",
+			"PackerClean",
+			"PackerCompile",
+			"PackerStatus",
+			"PackerProfile",
+			"PackerLoad",
+		},
+		config = function()
+			require("plugins")
+		end,
+	},
 
-    {
-        "nvim-treesitter/nvim-treesitter",
-        module = "nvim-treesitter",
-        setup = function()
-            require("core.utils").on_file_open("nvim-treesitter")
-        end,
-        cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
-        run = ":TSUpdate",
-        config = function()
-            require "plugins.configs.nvim-treesitter"
-        end,
-    },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		module = "nvim-treesitter",
+		setup = function()
+			require("core.utils").on_file_open("nvim-treesitter")
+		end,
+		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
+		run = ":TSUpdate",
+		config = function()
+			require("plugins.configs.nvim-treesitter")
+		end,
+	},
 
-    {
-        "williamboman/mason.nvim",
-        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
-        config = function()
-            require "plugins.configs.mason"
-        end,
-    },
-    
-    {
-        "neovim/nvim-lspconfig",
-    },
-    
-    {
-        "williamboman/mason-lspconfig.nvim",
-    },
-    
-    {
-        "mfussenegger/nvim-lint",
-    },
+	{
+		"williamboman/mason.nvim",
+		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+		config = function()
+			require("plugins.configs.mason")
+		end,
+	},
 
-    {
-        "mhartington/formatter.nvim",
-        cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
-        config = function()
-            require "plugins.configs.formatter"
-        end,
-    },
+	{
+		"neovim/nvim-lspconfig",
+	},
 
-    {
-        "mfussenegger/nvim-dap",
-    },
+	{
+		"williamboman/mason-lspconfig.nvim",
+	},
 
-    {
-        "neoclide/coc.nvim",
-        branch = "release",
-        config = function()
-            require "plugins.configs.coc"
-        end,
-    },
+	{
+		"mfussenegger/nvim-lint",
+	},
 
-    {
-        "folke/tokyonight.nvim",
-        config = function()
-            require "plugins.configs.tokyonight"
-        end,
-    },
+	{
+		"mhartington/formatter.nvim",
+		cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
+		config = function()
+			require("plugins.configs.formatter")
+		end,
+	},
 
-    {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function()
-            require "plugins.configs.lualine"
-        end
-    },
+	{
+		"mfussenegger/nvim-dap",
+	},
 
-    {
-        "noib3/nvim-cokeline",
-        requires = { 'kyazdani42/nvim-web-devicons' },
-        config = function()
-            require "plugins.configs.cokeline"
-        end
-    },
+	{
+		"neoclide/coc.nvim",
+		branch = "release",
+		config = function()
+			require("plugins.configs.coc")
+		end,
+	},
 
-    {
-        "nvim-tree/nvim-tree.lua",
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly', -- optional, updated every week. (see issue #1193)
-        config = function()
-            require "plugins.configs.nvim-tree"
-        end,
-    },
+	{
+		"folke/tokyonight.nvim",
+		config = function()
+			require("plugins.configs.tokyonight")
+		end,
+	},
 
-    {
-        'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            require "plugins.configs.telescope"
-        end,
-    },
+	{
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = function()
+			require("plugins.configs.lualine")
+		end,
+	},
 
-    {
-        "mbbill/undotree",
-        config = function()
-            require "plugins.configs.undotree"
-        end,
-    },
+	{
+		"noib3/nvim-cokeline",
+		requires = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("plugins.configs.cokeline")
+		end,
+	},
 
+	{
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+		config = function()
+			require("plugins.configs.nvim-tree")
+		end,
+	},
+
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("plugins.configs.telescope")
+		end,
+	},
+
+	{
+		"mbbill/undotree",
+		config = function()
+			require("plugins.configs.undotree")
+		end,
+	},
+
+	{
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("plugins.configs.toggleterm")
+		end,
+	},
 }
 local present, packer = pcall(require, "packer")
 
 if present then
-    vim.cmd("packadd packer.nvim")
+	vim.cmd("packadd packer.nvim")
 
-    local init_options = require "plugins.configs.packer_init"
+	local init_options = require("plugins.configs.packer_init")
 
-    packer.init(init_options)
-    packer.startup { plugins }
+	packer.init(init_options)
+	packer.startup({ plugins })
 end
