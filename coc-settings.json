@@ -17,5 +17,9 @@
     "sumneko-lua.checkUpdate" : true,
 
     "tsserver.maxTsServerMemory": 8192,
-    "Lua.telemetry.enable": true
+    "Lua.telemetry.enable": true,
+
+    "rust-analyzer.checkOnSave.target": "#rust-analyzer.cargo.target#",
+    "rust-analyzer.completion.autoimport.enable": true,
+    "rust-analyzer.completion.autoself.enable": true
 }

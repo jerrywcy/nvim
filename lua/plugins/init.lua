@@ -130,6 +130,13 @@ local plugins = {
 			require("plugins.configs.toggleterm")
 		end,
 	},
+
+	{
+		"lewis6991/hover.nvim",
+		config = function()
+			require("plugins.configs.hover")
+		end,
+	},
 }
 local present, packer = pcall(require, "packer")
 
