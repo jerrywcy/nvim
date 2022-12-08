@@ -1,8 +1,8 @@
 local keyset = vim.keymap.set
 -- Auto complete
 function _G.check_back_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
 -- Use tab for trigger completion with characters ahead and navigate.
@@ -35,33 +35,30 @@ keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 
 keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
 
-
 -- Use K to show documentation in preview window.
 function _G.show_docs()
-    local cw = vim.fn.expand('<cword>')
-    if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
-        vim.api.nvim_command('h ' .. cw)
-    elseif vim.api.nvim_eval('coc#rpc#ready()') then
-        vim.fn.CocActionAsync('doHover')
-    else
-        vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
-    end
+	local cw = vim.fn.expand("<cword>")
+	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
+		vim.api.nvim_command("h " .. cw)
+	elseif vim.api.nvim_eval("coc#rpc#ready()") then
+		vim.fn.CocActionAsync("doHover")
+	else
+		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
+	end
 end
 
-keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
+keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
 -- Highlight the symbol and its references when holding the cursor.
 vim.api.nvim_create_augroup("CocGroup", {})
 vim.api.nvim_create_autocmd("CursorHold", {
-    group = "CocGroup",
-    command = "silent call CocActionAsync('highlight')",
-    desc = "Highlight symbol under cursor on CursorHold"
+	group = "CocGroup",
+	command = "silent call CocActionAsync('highlight')",
+	desc = "Highlight symbol under cursor on CursorHold",
 })
-
 
 -- Symbol renaming.
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
-
 
 -- Formatting selected code.
 keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
@@ -76,14 +73,11 @@ keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 -- Remap keys for applying codeAction to the current buffer.
 keyset("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
 
-
 -- Apply AutoFix to problem on the current line.
 keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 
-
 -- Run the Code Lens action on the current line.
 keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
-
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -96,19 +90,15 @@ keyset("o", "ic", "<Plug>(coc-classobj-i)", opts)
 keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
 keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
 
-
 -- Remap <C-f> and <C-b> for scroll float windows/popups.
 ---@diagnostic disable-next-line: redefined-local
 local opts = { silent = true, nowait = true, expr = true }
 keyset("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 keyset("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
-keyset("i", "<C-f>",
-    'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
-keyset("i", "<C-b>",
-    'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
+keyset("i", "<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+keyset("i", "<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
 keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
-
 
 -- Use CTRL-S for selections ranges.
 -- Requires 'textDocument/selectionRange' support of language server.
@@ -124,7 +114,7 @@ keyset("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions.
 keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands.
-keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+-- keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document.
 keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols.

@@ -137,6 +137,20 @@ local plugins = {
 			require("plugins.configs.hover")
 		end,
 	},
+
+	{
+		"terrortylor/nvim-comment",
+		config = function()
+			require("plugins.configs.nvim-comment")
+		end,
+	},
+
+	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("plugins.configs.auto-save")
+		end,
+	},
 }
 local present, packer = pcall(require, "packer")
 
