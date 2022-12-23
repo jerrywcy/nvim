@@ -151,6 +151,23 @@ local plugins = {
 			require("plugins.configs.auto-save")
 		end,
 	},
+
+	{
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+			"rouge8/neotest-rust",
+			"haydenmeade/neotest-jest",
+			"marilari88/neotest-vitest",
+			"nvim-neotest/neotest-vim-test",
+			"vim-test/vim-test",
+		},
+		config = function()
+			require("plugins.configs.neotest")
+		end,
+	},
 }
 local present, packer = pcall(require, "packer")
 
