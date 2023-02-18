@@ -9,7 +9,8 @@
         "javascript",
         "shell",
         "typescript",
-        "rust"
+        "rust",
+        "python"
     ],
 
     "prettier.tabWidth" : 4,

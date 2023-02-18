@@ -11,7 +11,7 @@ require("toggleterm").setup({
 			return vim.o.columns * 0.4
 		end
 	end,
-	open_mapping = [[<C-\>]],
+	-- open_mapping = [[<C-\>]],
 	-- on_create = fun(t: Terminal), -- function to run when the terminal is first created
 	-- on_open = fun(t: Terminal), -- function to run when the terminal opens
 	-- on_close = fun(t: Terminal), -- function to run when the terminal closes
@@ -67,6 +67,17 @@ require("toggleterm").setup({
 })
 
 local Terminal = require("toggleterm.terminal").Terminal
+local normal_terminal = Terminal:new({
+	cmd = "zsh",
+	dir = vim.fn.expand("%"),
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(term.bufnr, "n", [[<C-\>]], "<cmd>close<CR>", { noremap = true, silent = true })
+	end,
+	on_close = function(term)
+		vim.cmd("startinsert!")
+	end,
+})
 local lazygit = Terminal:new({
 	cmd = "lazygit",
 	dir = "git_dir",
@@ -87,9 +98,13 @@ local lazygit = Terminal:new({
 function _lazygit_toggle()
 	lazygit:toggle()
 end
+function _normal_toggle()
+	normal_terminal:toggle()
+end
 local mappings = {
 	n = {
 		["<leader>g"] = { "<cmd>lua _lazygit_toggle()<CR>", "Toggle Lazygit" },
+		[ [[<C-\>]] ] = { "<cmd>lua _normal_toggle()<CR>", "Toggle Terminal" },
 	},
 }
 require("core.utils").load_mappings(mappings)

@@ -168,6 +168,13 @@ local plugins = {
 			require("plugins.configs.neotest")
 		end,
 	},
+
+	-- {
+	-- 	"Manas140/run.nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.run")
+	-- 	end,
+	-- },
 }
 local present, packer = pcall(require, "packer")
 
