@@ -175,6 +175,16 @@ local plugins = {
 	-- 		require("plugins.configs.run")
 	-- 	end,
 	-- },
+	{
+		"wakatime/vim-wakatime",
+	},
+
+	{
+		"kylechui/nvim-surround",
+		config = function()
+			require("plugins.configs.nvim-surround")
+		end,
+	},
 }
 local present, packer = pcall(require, "packer")
 

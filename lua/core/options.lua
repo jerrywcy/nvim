@@ -1,6 +1,11 @@
 local opt = vim.opt
 local g = vim.g
 
+if g.neovide then
+	vim.o.guifont = "FiraCode Nerd Font"
+	g.neovide_cursor_vfx_mode = "railgun"
+end
+
 opt.laststatus = 3
 opt.showmode = false
 
@@ -41,6 +46,6 @@ opt.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
 
 g.mapleader = " "

@@ -11,7 +11,7 @@ require("toggleterm").setup({
 			return vim.o.columns * 0.4
 		end
 	end,
-	-- open_mapping = [[<C-\>]],
+	open_mapping = [[<C-\>]],
 	-- on_create = fun(t: Terminal), -- function to run when the terminal is first created
 	-- on_open = fun(t: Terminal), -- function to run when the terminal opens
 	-- on_close = fun(t: Terminal), -- function to run when the terminal closes
@@ -104,7 +104,7 @@ end
 local mappings = {
 	n = {
 		["<leader>g"] = { "<cmd>lua _lazygit_toggle()<CR>", "Toggle Lazygit" },
-		[ [[<C-\>]] ] = { "<cmd>lua _normal_toggle()<CR>", "Toggle Terminal" },
+		-- [ [[<C-\>]] ] = { "<cmd>lua _normal_toggle()<CR>", "Toggle Terminal" },
 	},
 }
 require("core.utils").load_mappings(mappings)
