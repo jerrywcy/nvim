@@ -3,6 +3,7 @@ _run = require("core.run").run
 local commands = {
 	["Run"] = { "lua _run()", "Run Current Code" },
 	["EditSnippets"] = { "CocCommand snippets.editSnippets", "Edit Coc snippets" },
+	["Reload"] = { "source ~/.config/nvim/init.lua" },
 }
 
 require("core.utils").load_user_commands(commands)

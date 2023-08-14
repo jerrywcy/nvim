@@ -1,64 +1,59 @@
-local plugins = {
+print("loading lazy.nvim")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
 
-	{
-		"wbthomason/packer.nvim",
-		cmd = {
-			"PackerSnapshot",
-			"PackerSnapshotRollback",
-			"PackerSnapshotDelete",
-			"PackerInstall",
-			"PackerUpdate",
-			"PackerSync",
-			"PackerClean",
-			"PackerCompile",
-			"PackerStatus",
-			"PackerProfile",
-			"PackerLoad",
-		},
-		config = function()
-			require("plugins")
-		end,
-	},
+local lazy_cmd = require("lazy.view.config").commands
+local lazy_keys = {
+	{ cmd = "install", key = "i" },
+	{ cmd = "update", key = "u" },
+	{ cmd = "sync", key = "s" },
+	{ cmd = "clean", key = "cl" },
+	{ cmd = "check", key = "ch" },
+	{ cmd = "log", key = "l" },
+	{ cmd = "restore", key = "rs" },
+	{ cmd = "profile", key = "p" },
+	{ cmd = "profile", key = "p" },
+}
+for _, v in ipairs(lazy_keys) do
+	lazy_cmd[v.cmd].key = "<space>" .. v.key
+	lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
+end
 
-	{
-		"nvim-treesitter/nvim-treesitter",
-		module = "nvim-treesitter",
-		setup = function()
-			require("core.utils").on_file_open("nvim-treesitter")
-		end,
-		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
-		run = ":TSUpdate",
-		config = function()
-			require("plugins.configs.nvim-treesitter")
-		end,
-	},
-
-	{
-		"williamboman/mason.nvim",
-		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
-		config = function()
-			require("plugins.configs.mason")
-		end,
-	},
-
-	{
-		"neovim/nvim-lspconfig",
-	},
-
-	{
-		"williamboman/mason-lspconfig.nvim",
-	},
+require("lazy").setup({
+	-- require("plugins.configs.auto-save"),
+	require("plugins.configs.autocomplete").config,
+	-- require("plugins.configs.coc"),
+	require("plugins.configs.cokeline"),
+	require("plugins.configs.competitest"),
+	require("plugins.configs.debugger"),
+	require("plugins.configs.fzf"),
+	require("plugins.configs.hover"),
+	require("plugins.configs.lspconfig").config,
+	require("plugins.configs.lualine"),
+	require("plugins.configs.mason"),
+	require("plugins.configs.neotest"),
+	require("plugins.configs.nvim-comment"),
+	require("plugins.configs.nvim-surround"),
+	require("plugins.configs.nvim-tree"),
+	require("plugins.configs.nvim-treesitter"),
+	require("plugins.configs.telescope").config,
+	require("plugins.configs.toggleterm"),
+	require("plugins.configs.tokyonight"),
+	require("plugins.configs.undotree"),
+	require("plugins.configs.yanky"),
 
 	{
 		"mfussenegger/nvim-lint",
-	},
-
-	{
-		"mhartington/formatter.nvim",
-		cmd = { "Format", "FormatLock", "FormatWrite", "FormatWriteLock" },
-		config = function()
-			require("plugins.configs.formatter")
-		end,
 	},
 
 	{
@@ -66,133 +61,6 @@ local plugins = {
 	},
 
 	{
-		"neoclide/coc.nvim",
-		branch = "release",
-		config = function()
-			require("plugins.configs.coc")
-		end,
-	},
-
-	{
-		"folke/tokyonight.nvim",
-		config = function()
-			require("plugins.configs.tokyonight")
-		end,
-	},
-
-	{
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		config = function()
-			require("plugins.configs.lualine")
-		end,
-	},
-
-	{
-		"noib3/nvim-cokeline",
-		requires = { "kyazdani42/nvim-web-devicons" },
-		config = function()
-			require("plugins.configs.cokeline")
-		end,
-	},
-
-	{
-		"nvim-tree/nvim-tree.lua",
-		requires = {
-			"nvim-tree/nvim-web-devicons", -- optional, for file icons
-		},
-		tag = "nightly", -- optional, updated every week. (see issue #1193)
-		config = function()
-			require("plugins.configs.nvim-tree")
-		end,
-	},
-
-	{
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("plugins.configs.telescope")
-		end,
-	},
-
-	{
-		"mbbill/undotree",
-		config = function()
-			require("plugins.configs.undotree")
-		end,
-	},
-
-	{
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-		config = function()
-			require("plugins.configs.toggleterm")
-		end,
-	},
-
-	{
-		"lewis6991/hover.nvim",
-		config = function()
-			require("plugins.configs.hover")
-		end,
-	},
-
-	{
-		"terrortylor/nvim-comment",
-		config = function()
-			require("plugins.configs.nvim-comment")
-		end,
-	},
-
-	{
-		"Pocco81/auto-save.nvim",
-		config = function()
-			require("plugins.configs.auto-save")
-		end,
-	},
-
-	{
-		"nvim-neotest/neotest",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			"antoinemadec/FixCursorHold.nvim",
-			"rouge8/neotest-rust",
-			"haydenmeade/neotest-jest",
-			"marilari88/neotest-vitest",
-			"nvim-neotest/neotest-vim-test",
-			"vim-test/vim-test",
-		},
-		config = function()
-			require("plugins.configs.neotest")
-		end,
-	},
-
-	-- {
-	-- 	"Manas140/run.nvim",
-	-- 	config = function()
-	-- 		require("plugins.configs.run")
-	-- 	end,
-	-- },
-	{
 		"wakatime/vim-wakatime",
 	},
-
-	{
-		"kylechui/nvim-surround",
-		config = function()
-			require("plugins.configs.nvim-surround")
-		end,
-	},
-}
-local present, packer = pcall(require, "packer")
-
-if present then
-	vim.cmd("packadd packer.nvim")
-
-	local init_options = require("plugins.configs.packer_init")
-
-	packer.init(init_options)
-	packer.startup({ plugins })
-end
+})
