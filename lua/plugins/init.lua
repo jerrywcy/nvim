@@ -34,14 +34,14 @@ require("lazy").setup({
 	require("plugins.configs.autocomplete").config,
 	-- require("plugins.configs.coc"),
 	require("plugins.configs.cokeline"),
-	require("plugins.configs.competitest"),
+	-- require("plugins.configs.competitest"),
 	require("plugins.configs.debugger"),
 	require("plugins.configs.fzf"),
 	require("plugins.configs.hover"),
 	require("plugins.configs.lspconfig").config,
 	require("plugins.configs.lualine"),
 	require("plugins.configs.mason"),
-	require("plugins.configs.neotest"),
+	-- require("plugins.configs.neotest"),
 	require("plugins.configs.nvim-comment"),
 	require("plugins.configs.nvim-surround"),
 	require("plugins.configs.nvim-tree"),
@@ -51,6 +51,7 @@ require("lazy").setup({
 	require("plugins.configs.tokyonight"),
 	require("plugins.configs.undotree"),
 	require("plugins.configs.yanky"),
+    require("plugins.configs.yuck"),
 
 	{
 		"mfussenegger/nvim-lint",
@@ -61,6 +62,6 @@ require("lazy").setup({
 	},
 
 	{
-		"wakatime/vim-wakatime",
+	    "wakatime/vim-wakatime",
 	},
 })
