@@ -46,6 +46,7 @@ require("lazy").setup({
 	require("plugins.configs.nvim-surround"),
 	require("plugins.configs.nvim-tree"),
 	require("plugins.configs.nvim-treesitter"),
+    require("plugins.configs.octo"),
 	require("plugins.configs.telescope").config,
 	require("plugins.configs.toggleterm"),
 	require("plugins.configs.tokyonight"),
