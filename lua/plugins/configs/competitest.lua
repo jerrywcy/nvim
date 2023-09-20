@@ -27,10 +27,21 @@ return {
             testcases_output_file_format = "$(TCNUM).out",
 
             template_file = "~/OI/.templates/template.$(FEXT)",
+            date_format = "%Y-%m-%d %H:%M:%S",
             received_problems_path = "$(HOME)/OI/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
             received_contests_directory = "$(HOME)/OI/$(JUDGE)/$(CONTEST)",
             received_contests_problems_path = "$(PROBLEM)/main.$(FEXT)",
             evaluate_template_modifiers = true,
         })
     end,
+    commander = {
+        {
+            cmd = "<CMD>CompetiTest receive problem<CR>",
+            desc = "Receive problem with CompetiTest",
+        },
+        {
+            cmd = "<CMD>CompetiTest receive contest<CR>",
+            desc = "Receive contest with CompetiTest",
+        },
+    }
 }
