@@ -1,6 +1,11 @@
 require("core.options")
 require("core.mappings")
 
+if next(vim.fn.argv()) == nil then
+    vim.api.nvim_create_autocmd("VimEnter", { command = "NvimTreeToggle", })
+    vim.api.nvim_create_autocmd("VimEnter", { command = "Telescope project", })
+end
+
 local uv = vim.loop
 
 local function file_exists(path)

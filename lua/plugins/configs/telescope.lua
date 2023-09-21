@@ -21,6 +21,7 @@ M.config = {
             "tsakirist/telescope-lazy.nvim",
             "fannheyward/telescope-coc.nvim",
             "dimaportenko/telescope-simulators.nvim",
+            "nvim-telescope/telescope-project.nvim",
         },
         config = function()
             local builtin = require("telescope.builtin")
@@ -98,6 +99,18 @@ M.config = {
                         case_mode = "smart_case",
                     },
                     command_palette = command_palette,
+                    project = {
+                        hidden_files = true, -- default: false
+                        theme = "dropdown",
+                        order_by = "recent",
+                        search_by = "title",
+                        sync_with_nvim_tree = true, -- default false
+                        -- default for on_project_selected = find project files
+                        on_project_selected = function(prompt_bufnr)
+                            -- Do anything you want in here. For example:
+                            require("telescope._extensions.project.actions").change_working_directory(prompt_bufnr, false)
+                        end
+                    }
                 },
             })
             require("dressing").setup({
@@ -121,6 +134,7 @@ M.config = {
             ts.load_extension("fzf")
             ts.load_extension("simulators")
             ts.load_extension("commander")
+            ts.load_extension("project")
 
             require("simulators").setup({
                 android_emulator = false,

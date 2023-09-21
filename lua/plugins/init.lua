@@ -12,22 +12,21 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_cmd = require("lazy.view.config").commands
-local lazy_keys = {
-    { cmd = "install", key = "i" },
-    { cmd = "update",  key = "u" },
-    { cmd = "sync",    key = "s" },
-    { cmd = "clean",   key = "cl" },
-    { cmd = "check",   key = "ch" },
-    { cmd = "log",     key = "l" },
-    { cmd = "restore", key = "rs" },
-    { cmd = "profile", key = "p" },
-    { cmd = "profile", key = "p" },
-}
-for _, v in ipairs(lazy_keys) do
-    lazy_cmd[v.cmd].key = "<space>" .. v.key
-    lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
-end
+-- local lazy_cmd = require("lazy.view.config").commands
+-- local lazy_keys = {
+--     { cmd = "install", key = "i" },
+--     { cmd = "update",  key = "u" },
+--     { cmd = "sync",    key = "s" },
+--     { cmd = "clean",   key = "cl" },
+--     { cmd = "check",   key = "ch" },
+--     { cmd = "log",     key = "l" },
+--     { cmd = "restore", key = "rs" },
+--     { cmd = "profile", key = "p" },
+-- }
+-- for _, v in ipairs(lazy_keys) do
+--     lazy_cmd[v.cmd].key = "<space>" .. v.key
+--     lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
+-- end
 
 require("lazy").setup({
     -- require("plugins.configs.auto-save"),
@@ -35,6 +34,7 @@ require("lazy").setup({
     -- require("plugins.configs.coc"),
     require("plugins.configs.cokeline"),
     require("plugins.configs.competitest"),
+    -- require("plugins.configs.dashboard"),
     require("plugins.configs.debugger"),
     require("plugins.configs.fzf"),
     require("plugins.configs.hover"),
