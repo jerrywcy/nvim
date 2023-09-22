@@ -25,14 +25,14 @@ M.config = {
         },
         config = function()
             local builtin = require("telescope.builtin")
-            vim.keymap.set("n", "<c-p>", builtin.find_files, opt)
+            -- vim.keymap.set("n", "<c-p>", builtin.find_files, opt)
             -- vim.keymap.set('n', '<c-f>', function()
             -- 	builtin.grep_string({ search = "" })
             -- end, m)
             vim.keymap.set("n", "<leader>rs", builtin.resume, opt)
             vim.keymap.set("n", "<c-w>", builtin.buffers, opt)
             -- vim.keymap.set("n", "<c-h>", builtin.oldfiles, opt)
-            vim.keymap.set("n", "<c-_>", builtin.current_buffer_fuzzy_find, opt)
+            vim.keymap.set("n", "<c-f>", builtin.current_buffer_fuzzy_find, opt)
             vim.keymap.set("n", "z=", builtin.spell_suggest, opt)
 
             vim.keymap.set("n", "<leader>d", builtin.diagnostics, opt)
@@ -148,6 +148,12 @@ M.config = {
             vim.keymap.set("n", "<leader>'b", tsdap.list_breakpoints, opt)
             vim.keymap.set("n", "<leader>'f", tsdap.frames, opt)
         end,
+        commander = {
+            {
+                cmd = "<CMD>Telescope project<CR>",
+                desc = "Switch project",
+            },
+        },
     },
     {
         "FeiyouG/commander.nvim",

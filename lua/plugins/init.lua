@@ -51,6 +51,7 @@ require("lazy").setup({
     require("plugins.configs.toggleterm"),
     require("plugins.configs.tokyonight"),
     require("plugins.configs.undotree"),
+    require("plugins.configs.venv"),
     require("plugins.configs.yanky"),
     require("plugins.configs.yuck"),
 
