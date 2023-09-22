@@ -2,8 +2,8 @@ local opt = vim.opt
 local g = vim.g
 
 if g.neovide then
-	vim.o.guifont = "FiraCode Nerd Font"
-	g.neovide_cursor_vfx_mode = "railgun"
+    vim.o.guifont = "FiraCode Nerd Font"
+    g.neovide_cursor_vfx_mode = "railgun"
 end
 
 opt.laststatus = 3
