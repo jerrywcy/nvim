@@ -247,6 +247,7 @@ F.configureKeybinds = function()
             vim.keymap.set("n", "<leader>t", ":Trouble<cr>", opts)
             -- vim.keymap.set("n", "<leader>-", vim.diagnostic.goto_prev, opts)
             -- vim.keymap.set("n", "<leader>=", vim.diagnostic.goto_next, opts)
+            vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         end,
     })
 end
