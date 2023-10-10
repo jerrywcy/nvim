@@ -7,6 +7,12 @@ return {
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
+                endwise = {
+                    enabled = true,
+                },
+                autotag = {
+                    enable = true,
+                },
                 ensure_installed = {
                     "query",
                     "typescript",
