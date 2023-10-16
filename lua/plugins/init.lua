@@ -31,6 +31,7 @@ end
 require("lazy").setup({
     -- require("plugins.configs.auto-save"),
     require("plugins.configs.autocomplete").config,
+    require("plugins.configs.breadcrumb"),
     -- require("plugins.configs.coc"),
     require("plugins.configs.cokeline"),
     require("plugins.configs.competitest"),

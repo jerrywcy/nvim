@@ -58,8 +58,15 @@ M.config = {
 
             F.configureInlayHints()
 
+
             lsp.on_attach(function(client, bufnr)
                 lsp.default_keymaps({ buffer = bufnr })
+
+                local breadcrumb_is_ok, breadcrumb = pcall(require, "breadcrumb")
+                if breadcrumb_is_ok and client.server_capabilities.documentSymbolProvider then
+                    breadcrumb.attach(client, bufnr)
+                end
+
                 client.server_capabilities.semanticTokensProvider = nil
                 require("plugins.configs.autocomplete").configfunc()
                 -- require("lsp_signature").on_attach(F.signature_config, bufnr)
