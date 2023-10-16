@@ -56,11 +56,13 @@
   "tokyonight.nvim": { "branch": "main", "commit": "9a01eada39558dc3243278e6805d90e8dff45dc0" },
   "trouble.nvim": { "branch": "main", "commit": "3f85d8ed30e97ceeddbbcf80224245d347053711" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "7f9a91c025bdc1a87556be5281d91da7665e640d" },
+  "ultisnips": { "branch": "master", "commit": "f6d1501b630cb783b0af8507c5588328f826d40f" },
   "undotree": { "branch": "master", "commit": "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" },
   "venv-selector.nvim": { "branch": "main", "commit": "14d6e866070f759e9014a8053954f835294f56f9" },
   "vim-dadbod": { "branch": "master", "commit": "7d80bbd11c407a09e0f7b869c38f3dec3902805f" },
   "vim-dadbod-completion": { "branch": "master", "commit": "fc7321a17f4c55db11fae89a884ddf4724020bae" },
   "vim-dadbod-ui": { "branch": "master", "commit": "5c4cad56f2774c3cd3a6ee9944c787820f2fcb20" },
+  "vim-snippets": { "branch": "master", "commit": "ccc2fa1529d372f7ac16d5eb07a385a72b50e05d" },
   "vim-wakatime": { "branch": "master", "commit": "0d2efa2daff34b27b0d227d4c3b136811c93db93" },
   "yanky.nvim": { "branch": "main", "commit": "4f5f15829fbad15ed703e7cb072cdf2a488cf5e7" },
   "yuck.vim": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" }

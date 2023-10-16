@@ -52,6 +52,7 @@ require("lazy").setup({
     require("plugins.configs.toggleterm"),
     require("plugins.configs.tokyonight"),
     require("plugins.configs.ultimate-autopair"),
+    require("plugins.configs.ultisnips"),
     require("plugins.configs.undotree"),
     require("plugins.configs.venv"),
     require("plugins.configs.yanky"),
