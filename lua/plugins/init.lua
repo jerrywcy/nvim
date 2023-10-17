@@ -24,8 +24,8 @@ local lazy_keys = {
     { cmd = "profile", key = "p" },
 }
 for _, v in ipairs(lazy_keys) do
-    lazy_cmd[v.cmd].key = "<leader>" .. v.key
-    lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
+    lazy_cmd[v.cmd].key = v.key
+    lazy_cmd[v.cmd].key_plugin = v.key
 end
 
 require("lazy").setup({
@@ -50,6 +50,7 @@ require("lazy").setup({
     require("plugins.configs.nvim-surround"),
     require("plugins.configs.nvim-tree"),
     require("plugins.configs.nvim-treesitter"),
+    require("plugins.configs.nvim-ufo"),
     require("plugins.configs.octo"),
     require("plugins.configs.telescope").config,
     require("plugins.configs.toggleterm"),
