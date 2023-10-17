@@ -44,6 +44,7 @@ require("lazy").setup({
     require("plugins.configs.lspconfig").config,
     require("plugins.configs.lualine"),
     require("plugins.configs.mason"),
+    require("plugins.configs.markdown"),
     -- require("plugins.configs.neotest"),
     require("plugins.configs.nvim-comment"),
     require("plugins.configs.nvim-surround"),
