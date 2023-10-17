@@ -71,6 +71,7 @@
   "vim-dadbod-ui": { "branch": "master", "commit": "5c4cad56f2774c3cd3a6ee9944c787820f2fcb20" },
   "vim-illuminate": { "branch": "master", "commit": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86" },
   "vim-snippets": { "branch": "master", "commit": "ccc2fa1529d372f7ac16d5eb07a385a72b50e05d" },
+  "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "vim-wakatime": { "branch": "master", "commit": "0d2efa2daff34b27b0d227d4c3b136811c93db93" },
   "which-key.nvim": { "branch": "main", "commit": "6962dae3565369363b59dd51fb206051555fcb4d" },
   "yanky.nvim": { "branch": "main", "commit": "4f5f15829fbad15ed703e7cb072cdf2a488cf5e7" },
