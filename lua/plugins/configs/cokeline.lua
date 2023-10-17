@@ -157,16 +157,6 @@ return {
 
         local mappings = {
             n = {
-                ["<S-Tab>"] = {
-                    "<Plug>(cokeline-focus-prev)",
-                    "Focus previous buffer",
-                },
-
-                ["<Tab>"] = {
-                    "<Plug>(cokeline-focus-next)",
-                    "Focus next buffer",
-                },
-
                 ["<leader>p"] = {
                     "<Plug>(cokeline-switch-prev)",
                     "Switch the position of the current buffer with the previous buffer",

@@ -2,13 +2,6 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
     config = function()
-        local breadcrumb = function()
-            local breadcrumb_status_ok, breadcrumb = pcall(require, "breadcrumb")
-            if not breadcrumb_status_ok then
-                return
-            end
-            return breadcrumb.get_breadcrumb()
-        end
         require("lualine").setup({
             options = {
                 icons_enabled = true,
@@ -45,22 +38,8 @@ return {
                 lualine_z = {},
             },
             tabline = {},
-            winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { breadcrumb },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
-            },
-            inactive_winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {},
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
-            },
+            winbar = {},
+            inactive_winbar = {},
             extensions = {},
         })
     end,
