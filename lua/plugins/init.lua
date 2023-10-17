@@ -40,6 +40,7 @@ require("lazy").setup({
     require("plugins.configs.debugger"),
     require("plugins.configs.dropbar"),
     require("plugins.configs.fzf"),
+    require("plugins.configs.gitsigns"),
     require("plugins.configs.hlchunks"),
     require("plugins.configs.hover"),
     require("plugins.configs.lspconfig").config,
