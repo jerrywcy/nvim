@@ -58,6 +58,7 @@ require("lazy").setup({
     require("plugins.configs.ultisnips"),
     require("plugins.configs.undotree"),
     require("plugins.configs.venv"),
+    require("plugins.configs.which-key"),
     require("plugins.configs.yanky"),
     require("plugins.configs.yuck"),
 
