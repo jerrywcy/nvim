@@ -136,5 +136,21 @@ return {
             -- (default: false, search engine will ignore vcs untracked files)
             g.any_jump_disable_vcs_ignore                   = 0
         end
+    },
+    {
+        "nvim-pack/nvim-spectre",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        keys = {
+            {
+                "<leader>f",
+                mode = "n",
+                function()
+                    require("spectre").open()
+                end,
+                desc = "Project find and replace"
+            }
+        }
     }
 }
