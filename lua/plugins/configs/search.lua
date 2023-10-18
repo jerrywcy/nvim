@@ -40,7 +40,7 @@ return {
             })
 
             local function nN(char)
-                local ok, winid = hlslens.nNPeekWithUFO(char)
+                local ok, winid = require("hlslens").nNPeekWithUFO(char)
                 if ok and winid then
                     -- Safe to override buffer scope keymaps remapped by ufo,
                     -- ufo will restore previous buffer keymaps before closing preview window

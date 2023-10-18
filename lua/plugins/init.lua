@@ -57,6 +57,7 @@ require("lazy").setup({
     require("plugins.configs.octo"),
     require("plugins.configs.rainbow-delimiters"),
     require("plugins.configs.search"),
+    require("plugins.configs.tabout"),
     require("plugins.configs.telescope").config,
     require("plugins.configs.toggleterm"),
     require("plugins.configs.tokyonight"),
