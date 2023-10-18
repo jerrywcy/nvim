@@ -246,7 +246,7 @@ return {
             let g:mkdp_page_title = '「${name}」'
 
             " use a custom location for images
-            let g:mkdp_images_path = /home/user/.markdown_images
+            " let g:mkdp_images_path = /home/user/.markdown_images
 
             " recognized filetypes
             " these filetypes will have MarkdownPreview... commands
