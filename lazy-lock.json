@@ -79,6 +79,7 @@
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "vim-wakatime": { "branch": "master", "commit": "0d2efa2daff34b27b0d227d4c3b136811c93db93" },
   "which-key.nvim": { "branch": "main", "commit": "6962dae3565369363b59dd51fb206051555fcb4d" },
+  "wilder.nvim": { "branch": "master", "commit": "679f348dc90d80ff9ba0e7c470c40a4d038dcecf" },
   "yanky.nvim": { "branch": "main", "commit": "4f5f15829fbad15ed703e7cb072cdf2a488cf5e7" },
   "yuck.vim": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" }
 }

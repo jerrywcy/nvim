@@ -66,6 +66,7 @@ require("lazy").setup({
     require("plugins.configs.venv"),
     require("plugins.configs.vim-visual-multi"),
     require("plugins.configs.which-key"),
+    require("plugins.configs.wilder"),
     require("plugins.configs.yanky"),
     require("plugins.configs.yuck"),
 
