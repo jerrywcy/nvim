@@ -42,7 +42,7 @@ require("lazy").setup({
     require("plugins.configs.fzf"),
     require("plugins.configs.gitsigns"),
     require("plugins.configs.hlchunks"),
-    require("plugins.configs.hover"),
+    -- require("plugins.configs.hover"),
     require("plugins.configs.lspconfig").config,
     require("plugins.configs.lualine"),
     require("plugins.configs.mason"),
