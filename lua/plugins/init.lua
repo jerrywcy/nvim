@@ -48,6 +48,7 @@ require("lazy").setup({
     require("plugins.configs.mason"),
     require("plugins.configs.markdown"),
     require("plugins.configs.neodev"),
+    require("plugins.configs.neogen"),
     -- require("plugins.configs.neotest"),
     require("plugins.configs.nvim-colorizer"),
     require("plugins.configs.nvim-comment"),

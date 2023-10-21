@@ -1,7 +1,3 @@
-local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
 local limitStr = function(str)
     if #str > 25 then
         str = string.sub(str, 1, 22) .. "..."
@@ -12,13 +8,14 @@ end
 local M = {}
 M.config = {
     "hrsh7th/nvim-cmp",
-    after = "SirVer/ultisnips",
     dependencies = {
+        "SirVer/ultisnips",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-calc",
+        -- "danymat/neogen",
         -- "andersevenrud/cmp-tmux",
         {
             "onsails/lspkind.nvim",
@@ -84,6 +81,7 @@ M.configfunc = function()
     local lspkind = require("lspkind")
     vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
     local cmp = require("cmp")
+    local neogen = require('neogen')
     local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
     -- local luasnip = require("luasnip")
 
@@ -168,8 +166,8 @@ M.configfunc = function()
                 i = function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-                    elseif has_words_before() then
-                        cmp.complete()
+                    elseif neogen.jumpable() then
+                        neogen.jump()
                     else
                         fallback()
                     end
@@ -179,6 +177,8 @@ M.configfunc = function()
                 i = function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+                    elseif neogen.jumpable(true) then
+                        neogen.jump_prev()
                     else
                         fallback()
                     end
