@@ -109,12 +109,12 @@ M.config = {
                 end,
             })
 
-            lsp.format_on_save({
-                format_opts = {
-                    -- async = false,
-                    -- timeout_ms = 10000,
-                },
-            })
+            -- lsp.format_on_save({
+            --     format_opts = {
+            --         -- async = false,
+            --         -- timeout_ms = 10000,
+            --     },
+            -- })
 
             local lspconfig = require("lspconfig")
 
@@ -135,28 +135,28 @@ M.config = {
             F.configureDocAndSignature()
             F.configureKeybinds()
 
-            local format_on_save_filetypes = {
-                dart = true,
-                json = true,
-                go = true,
-                lua = true,
-                -- typescript = true,
-                c = true,
-                cpp = true,
-                python = true,
-                html = true,
-            }
+            -- local format_on_save_filetypes = {
+            --     dart = true,
+            --     json = true,
+            --     go = true,
+            --     lua = true,
+            --     -- typescript = true,
+            --     c = true,
+            --     cpp = true,
+            --     python = true,
+            --     html = true,
+            -- }
 
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = "*",
-                callback = function()
-                    if format_on_save_filetypes[vim.bo.filetype] then
-                        local lineno = vim.api.nvim_win_get_cursor(0)
-                        vim.lsp.buf.format({ async = false })
-                        vim.api.nvim_win_set_cursor(0, lineno)
-                    end
-                end,
-            })
+            -- vim.api.nvim_create_autocmd("BufWritePre", {
+            --     pattern = "*",
+            --     callback = function()
+            --         if format_on_save_filetypes[vim.bo.filetype] then
+            --             local lineno = vim.api.nvim_win_get_cursor(0)
+            --             vim.lsp.buf.format({ async = false })
+            --             vim.api.nvim_win_set_cursor(0, lineno)
+            --         end
+            --     end,
+            -- })
         end,
     },
 }

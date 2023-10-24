@@ -9,6 +9,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "commander.nvim": { "branch": "main", "commit": "4b325d0b8ce1c7d441238f0ab8e0d4dc3b65b3f8" },
   "competitest.nvim": { "branch": "master", "commit": "9aaf2827b130d64da5de291d74235c77b950c44c" },
+  "conform.nvim": { "branch": "master", "commit": "4897996612adeb9cb39325f95c9b0481ce892edf" },
   "copilot.vim": { "branch": "release", "commit": "998cf5ab1b85e844c7e8edb864a997e590df7182" },
   "dressing.nvim": { "branch": "master", "commit": "c1e1d5fa44fe08811b6ef4aadac2b50e602f9504" },
   "dropbar.nvim": { "branch": "master", "commit": "79309dccd5e5b94f9ddf5ee8587691d2bfea2858" },
