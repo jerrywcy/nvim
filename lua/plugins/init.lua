@@ -34,6 +34,7 @@ require("lazy").setup({
     -- require("plugins.configs.breadcrumb"),
     -- require("plugins.configs.coc"),
     require("plugins.configs.cokeline"),
+    require("plugins.configs.coman"),
     require("plugins.configs.competitest"),
     require("plugins.configs.conform"),
     require("plugins.configs.copilot"),
