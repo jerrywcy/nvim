@@ -22,6 +22,7 @@ M.config = {
             "fannheyward/telescope-coc.nvim",
             "dimaportenko/telescope-simulators.nvim",
             "nvim-telescope/telescope-project.nvim",
+            "nvim-telescope/telescope-bibtex.nvim",
         },
         config = function()
             local builtin = require("telescope.builtin")
@@ -110,6 +111,10 @@ M.config = {
                             -- Do anything you want in here. For example:
                             require("telescope._extensions.project.actions").change_working_directory(prompt_bufnr, false)
                         end
+                    },
+                    bibtex = {
+                        depth = 2,
+                        search_keys = { 'title', 'author', 'year' },
                     }
                 },
             })
@@ -131,6 +136,7 @@ M.config = {
             ts.load_extension("coc")
             ts.load_extension("dap")
             ts.load_extension("telescope-tabs")
+            ts.load_extension("bibtex")
             ts.load_extension("fzf")
             ts.load_extension("simulators")
             ts.load_extension("commander")
