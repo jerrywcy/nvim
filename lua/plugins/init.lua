@@ -54,6 +54,7 @@ require("lazy").setup({
     require("plugins.configs.neotest"),
     require("plugins.configs.nvim-colorizer"),
     require("plugins.configs.nvim-comment"),
+    require("plugins.configs.nvim-r"),
     require("plugins.configs.nvim-scrollbar"),
     require("plugins.configs.nvim-surround"),
     require("plugins.configs.nvim-tree"),

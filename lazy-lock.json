@@ -1,11 +1,13 @@
 {
   "DAPInstall.nvim": { "branch": "main", "commit": "8798b4c36d33723e7bba6ed6e2c202f84bb300de" },
   "FixCursorHold.nvim": { "branch": "master", "commit": "1900f89dc17c603eec29960f57c00bd9ae696495" },
+  "Nvim-R": { "branch": "master", "commit": "d6ce4e385948d8472084ab2f460e71b64634d751" },
   "any-jump.vim": { "branch": "master", "commit": "770ef708ae3f13322430fcc663d7dfb864756b9b" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-calc": { "branch": "main", "commit": "ce91d14d2e7a8b3f6ad86d85e34d41c1ae6268d9" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
+  "cmp-nvim-r": { "branch": "main", "commit": "e0512989c36e420049dd6ce3d766767dcbd786f6" },
   "cmp-nvim-ultisnips": { "branch": "main", "commit": "24bca5c3e137b28cd87442d4fc51a2b312dd99cc" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "coman.nvim": { "branch": "main", "commit": "8ff02ca8bd91403430c141b6e9ad86dee1a2c427" },
