@@ -20,6 +20,7 @@ end
 
 -- Allow clipboard copy paste in neovim
 
+opt.filetype = "on"
 opt.laststatus = 3
 opt.showmode = false
 
