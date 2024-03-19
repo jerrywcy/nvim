@@ -29,7 +29,7 @@ for _, v in ipairs(lazy_keys) do
 end
 
 require("lazy").setup({
-	require("plugins.configs.vim-arduino"),
+	-- require("plugins.configs.vim-arduino"),
 	-- require("plugins.configs.auto-save"),
 	require("plugins.configs.autocomplete").config,
 	-- require("plugins.configs.breadcrumb"),
