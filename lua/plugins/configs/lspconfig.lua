@@ -124,6 +124,11 @@ M.config = {
 
 			lsp.setup()
 			require("fidget").setup({})
+			lspconfig.beancount.setup({
+				init_options = {
+					journal_file = "/Users/jerrywcy/Accounting/beancount/main.beancount",
+				},
+			})
 
 			local lsp_defaults = lspconfig.util.default_config
 			lsp_defaults.capabilities =
