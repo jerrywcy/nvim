@@ -66,6 +66,7 @@ require("lazy").setup({
 	require("plugins.configs.nvim-ufo"),
 	require("plugins.configs.octo"),
 	require("plugins.configs.rainbow-delimiters"),
+	require("plugins.configs.remote"),
 	require("plugins.configs.search"),
 	require("plugins.configs.suda"),
 	require("plugins.configs.tabout"),
